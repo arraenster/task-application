@@ -1,7 +1,7 @@
 const mongodb = require('mongodb')
 const MongoClient = mongodb.MongoClient
 
-const client = new MongoClient('mongodb://127.0.0.1:27017', { monitorCommands: true });
+const client = new MongoClient(process.env.DATABASE, { monitorCommands: true });
 
 client.connect().then(() => {
     console.log('Connected!')
